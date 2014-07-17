@@ -25,3 +25,5 @@ git subtree push --prefix=repo1 repo1 master
 
 2. git read-tree
 > parent-repo
+git remote add repo3 https://github.com/mingzhou/repo3.git
+git fetch repo3
