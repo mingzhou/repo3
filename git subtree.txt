@@ -1,0 +1,27 @@
+1. git subtree
+> parent-repo
+添加 repo
+git remote add -f 子仓库名 子仓库地址
+添加 subdir
+git subtree add -P 子目录名 子仓库名 链接的子仓库分支名
+
+git branch -b mingzhou_dev
+git remote add -f repo1 https://github.com/mingzhou/repo1.git
+git fetch repo1
+git subtree add -P repo1 repo1 master --squash
+
+git remote add -f repo2 https://github.com/mingzhou/repo2.git
+git fetch repo2
+git subtree add -P repo2 repo2 master --squash
+
+> parent-repo
+remote repo => local subdir
+git fetch repo1 master
+git subtree pull --prefix=repo1 repo1 master
+
+> parent-repo
+local subdir => remote repo
+git subtree push --prefix=repo1 repo1 master
+
+2. git read-tree
+> parent-repo
